@@ -1,0 +1,112 @@
+<!-- <div class="main">
+    <h1>U19 Registration Form</h1>
+    <div class="container">
+        <form [formGroup]="playerskill" (ngSubmit)="onSubmit()">
+            <h2>Palyer Roles</h2>
+            <label for="playerrole">Role:</label>
+            <select formControlName="playerrole" class="form-control form-select">
+                <option *ngFor="let position of playerrole" [value]="position">{{ position }}</option>
+            </select>
+            <div *ngIf="
+            playerskill.controls['playerrole'].invalid &&
+                                    (playerskill.controls['playerrole'].dirty || playerskill.controls['playerrole'].touched)
+                                " class="form-group-error-message">
+                               <strong>Position is required</strong> 
+                                </div>
+            <label for="battingStyle">Batting Style:</label>
+            <select formControlName="battingStyle" class="form-control form-select">
+              <option *ngFor="let style of battingStyle" [value]="style">{{ style }}</option>
+            </select>
+            <div *ngIf="
+            playerskill.controls['battingStyle'].invalid &&
+                                    (playerskill.controls['battingStyle'].dirty || playerskill.controls['battingStyle'].touched)
+                                " class="form-group-error-message">
+                               <strong>BattingStyle is required</strong> 
+                                </div>
+                                <label for="battingposition">Batting Position:</label>
+                                <select formControlName="battingposition" class="form-control form-select">
+                                  <option *ngFor="let style of battingposition" [value]="style">{{ style }}</option>
+                                </select>
+                                <div *ngIf="
+                                playerskill.controls['battingposition'].invalid &&
+                                                        (playerskill.controls['battingposition'].dirty || playerskill.controls['battingposition'].touched)
+                                                    " class="form-group-error-message">
+                                                   <strong>battingposition is required</strong> 
+                                                    </div>
+            <label for="bowlingStyle">Bowling Style:</label>
+            <select formControlName="bowlingStyle" class="form-control form-select">
+                <option *ngFor="let style of bowlingStyle" [value]="style">{{ style }}</option>
+            </select>
+            <div *ngIf="
+            playerskill.controls['bowlingStyle'].invalid &&
+                                    (playerskill.controls['bowlingStyle'].dirty || playerskill.controls['bowlingStyle'].touched)
+                                " class="form-group-error-message">
+                             <strong>BowlingStyle is required</strong>  
+                                </div>
+
+            
+            <br>
+            <div class="button-container">
+            <button type="button" (click)="goToPervious()">Pervious</button>     
+            <button type="submit" [disabled]="playerskill.invalid">Next</button>
+            </div>      
+        </form>
+    </div>
+</div> -->
+
+<!-- src/app/app.component.html -->
+<div class="main">
+    <h1>U19 Registration Form</h1>
+    <div class="container">
+      <form [formGroup]="playerskill" (ngSubmit)="onSubmit()">
+        <h2>Player Roles</h2>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Role</mat-label>
+          <mat-select formControlName="playerrole" required>
+            <mat-option *ngFor="let position of playerrole" [value]="position">{{ position }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="playerskill.controls['playerrole'].invalid && (playerskill.controls['playerrole'].dirty || playerskill.controls['playerrole'].touched)" class="form-group-error-message">
+            Position is required
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Batting Style</mat-label>
+          <mat-select formControlName="battingStyle" required>
+            <mat-option *ngFor="let style of battingStyle" [value]="style">{{ style }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="playerskill.controls['battingStyle'].invalid && (playerskill.controls['battingStyle'].dirty || playerskill.controls['battingStyle'].touched)" class="form-group-error-message">
+            Batting Style is required
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Batting Position</mat-label>
+          <mat-select formControlName="battingposition" required>
+            <mat-option *ngFor="let position of battingposition" [value]="position">{{ position }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="playerskill.controls['battingposition'].invalid && (playerskill.controls['battingposition'].dirty || playerskill.controls['battingposition'].touched)" class="form-group-error-message">
+            Batting Position is required
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Bowling Style</mat-label>
+          <mat-select formControlName="bowlingStyle" required>
+            <mat-option *ngFor="let style of bowlingStyle" [value]="style">{{ style }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="playerskill.controls['bowlingStyle'].invalid && (playerskill.controls['bowlingStyle'].dirty || playerskill.controls['bowlingStyle'].touched)" class="form-group-error-message">
+            Bowling Style is required
+          </mat-error>
+        </mat-form-field>
+  
+        <div class="button-container">
+          <!-- <button mat-button type="button" (click)="goToPrevious()">Previous</button> -->
+          <button mat-button type="button" (click)="goToPervious()">Pervious</button>     
+          <button mat-raised-button color="primary" type="submit" [disabled]="playerskill.invalid">Next</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

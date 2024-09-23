@@ -1,0 +1,85 @@
+<!-- <div class="main">
+    <h1>Ranji Trophy Form</h1>
+      <div class="container">
+          <form [formGroup]="documentform" (ngSubmit)="onSubmit()">
+            <h2>Documentation</h2>
+              <div>
+                  <label for="photo">Photo:</label>
+                  <input type="file" id="photo" formControlName="photo" accept="image/*">
+                  <div *ngIf="
+                  documentform.controls['photo'].invalid &&
+                                          (documentform.controls['photo'].dirty || documentform.controls['photo'].touched)
+                                      " class="form-group-error-message">
+                                     <strong>The selected photo must be in JPG or PNG format.</strong> 
+                                      </div>
+                </div>
+              
+                <div>
+                  <label for="identityProof">Identity Proof:</label>
+                  <input type="file" id="identityProof" formControlName="identityProof"  accept="image/*, .pdf">
+                  <div *ngIf="
+                  documentform.controls['identityProof'].invalid &&
+                                          (documentform.controls['identityProof'].dirty || documentform.controls['identityProof'].touched)
+                                      " class="form-group-error-message">
+                                     <strong>Please select an identity proof file in PDF or image format.</strong> 
+                                      </div>
+                </div>
+              
+                <div>
+                  <label>
+                    <input type="checkbox" formControlName="acceptTerms"> Accept Terms and Conditions
+                  </label>
+                  <div *ngIf="
+                  documentform.controls['acceptTerms'].invalid &&
+                                          (documentform.controls['acceptTerms'].dirty || documentform.controls['acceptTerms'].touched)
+                                      " class="form-group-error-message">
+                                     <strong> Please accept the terms and conditions.</strong> 
+                                      </div>
+                </div>
+              
+                <div class="button-container">
+                  <button type="button" (click)="goToPervious()">Pervious</button>     
+                  <button type="submit" [disabled]="documentform.invalid">Submit</button>
+                  </div>   
+          </form>
+      </div>
+  </div>
+   -->
+
+
+   <div class="main">
+    <h1>U19 Registration Form</h1>
+    <div class="container">
+      <form [formGroup]="documentform" (ngSubmit)="onSubmit()">
+        <h2>Documentation</h2>
+        
+        <div>
+          <label for="photo">Photo:</label>
+          <input type="file" id="photo" formControlName="photo" accept="image/*">
+          <mat-error *ngIf="documentform.controls['photo'].invalid && (documentform.controls['photo'].dirty || documentform.controls['photo'].touched)" class="form-group-error-message" >
+            <strong>The selected photo must be in JPG or PNG format.</strong>
+          </mat-error>
+        </div>
+  
+        <div>
+          <label for="identityProof">Identity Proof:</label>
+          <input type="file" id="identityProof" formControlName="identityProof" accept="image/*, .pdf">
+          <mat-error *ngIf="documentform.controls['identityProof'].invalid && (documentform.controls['identityProof'].dirty || documentform.controls['identityProof'].touched)" class="form-group-error-message">
+            <strong>Please select an identity proof file in PDF or image format.</strong>
+          </mat-error>
+        </div>
+  
+        <div>
+          <mat-checkbox formControlName="acceptTerms">Accept Terms and Conditions</mat-checkbox>
+          <mat-error *ngIf="documentform.controls['acceptTerms'].invalid && (documentform.controls['acceptTerms'].dirty || documentform.controls['acceptTerms'].touched)" class="form-group-error-message">
+            <strong>Please accept the terms and conditions.</strong>
+          </mat-error>
+        </div>
+  
+        <div class="button-container">
+          <button mat-button type="button" (click)="goToPervious()">Previous</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="documentform.invalid">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>

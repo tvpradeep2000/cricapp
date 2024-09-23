@@ -1,0 +1,54 @@
+<!-- <div class="live-scores-tab">
+  <div *ngIf="upcomingMatches?.length > 0; else noScores">
+    <ng-container *ngFor="let score of upcomingMatches">
+      <div *ngIf="!score.matchStarted && !score.matchEnded" class="score-item">
+        <p><strong>{{ score.name }}</strong></p>
+        <p>Date: {{ score.date }}</p>
+        <p>Type: {{ score.matchType }}</p>
+        <p>Status: Not Started</p>
+        <p>Time: {{ score.dateTimeGMT | date: 'short' }}</p>
+        <p>Status: {{ score.status }}</p>
+      </div>
+    </ng-container>
+  </div>
+  <ng-template #noScores>
+    <p>No upcoming matches available at the moment.</p>
+  </ng-template>
+</div> -->
+
+<!-- <div class="container">
+  <h2>Upcoming Cricket Matches</h2>
+
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+  <div *ngIf="!upcomingMatches.length && !error" class="alert alert-info">No upcoming matches available.</div>
+
+  <div *ngFor="let score of upcomingMatches" class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ score.team1 }} vs {{ score.team2 }}</h5>
+      <p class="card-text">
+        Match starts on: {{ score.startDate | date }}<br>
+        Location: {{ score.venue }}
+      </p>
+      <a href="#" class="btn btn-primary">View Details</a>
+    </div>
+  </div>
+</div> -->
+
+<div class="live-scores-tab">
+  <div *ngIf="upcomingMatches?.length > 0; else noMatches">
+    <div *ngFor="let score of upcomingMatches" class="score-item">  
+      <p><strong>{{ score.name }}</strong></p>
+      <p>Date: {{ score.date }}</p>
+      <p>Type: {{ score.matchType }}</p>
+      <p>Status: {{ score.matchStarted ? 'In Progress' : score.matchEnded ? 'Ended' : 'Not Started' }}</p>
+      <p>Time: {{ score.dateTimeGMT | date: 'short' }}</p>
+      <p *ngIf="score.matchStarted ">{{score?.score[0]?.inning}}: {{ score?.score[0]?.r }} / {{ score?.score[0]?.w }} in {{ score?.score[0]?.o }} overs</p>
+      <p *ngIf="score.matchStarted ">{{score?.score[1]?.inning}}: {{ score?.score[1]?.r }} / {{ score?.score[1]?.w }} in {{ score?.score[1]?.o }} overs</p>
+      <p *ngIf="score.matchStarted">UAE Women Score: {{ score.score[1].r }} / {{ score.score[1].w }} in {{ score.score[1].o }} overs</p> 
+      <p>Status: {{ score.status }}</p>
+    </div>
+  </div>
+  <ng-template #noMatches>
+    <p>No Matches available at the this moment.</p>
+  </ng-template>
+</div>

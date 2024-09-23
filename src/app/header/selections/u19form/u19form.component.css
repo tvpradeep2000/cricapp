@@ -1,0 +1,203 @@
+/* .main{
+    height: 100vh;
+    width: 107%;
+    background-image: url(/assets/Image3.jpg);    
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+
+.container {
+    max-width: 416px;
+    margin: 8px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 32px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    color: #050505; 
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 28px;
+    color: #dd2630; 
+    margin-bottom: 15px;
+    border-bottom: 3px solid #e4e3de;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+mat-label {
+    display: block;
+    margin-bottom: 50px;
+    font-weight: bold;
+    color:black;
+}
+.form-group-error-message {
+    right: 0;
+    width: 100%;
+    position: relative;
+    color: rgb(255, 5, 5);
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
+button:disabled {
+    background-color: #ffffff;
+    cursor: not-allowed;
+}
+
+.gender-container {
+    display: flex;
+  }
+  
+  .radio-label {
+    margin-right: 5px; 
+  }
+  
+   */
+
+
+.main {
+    height: 100vh;
+    width: 107%;
+    background-image:url(/assets/Image3.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    bottom: 18px;
+  }
+  
+  .main h1 {
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    max-width: 416px;
+    margin: 8px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 32px;
+    text-align: center;
+  }
+  h1 {
+    font-size: 36px;
+    color: #050505; 
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 28px;
+    color: #dd2630; 
+    margin-bottom: 15px;
+    border-bottom: 3px solid #e4e3de;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.form-group-error-message {
+  right: 0;
+  width: 100%;
+  position: relative;
+  color: rgb(255, 5, 5);
+}
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  input {
+    width: 100%;
+    padding: 3px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-weight: bold;
+    text-size-adjust: 10px;
+}
+  
+  .gender-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  
+  mat-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  mat-radio-group {
+    display: flex;
+    gap: 8px;
+    text-align: center;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  mat-error {
+    right: 0;
+    width: 100%;
+    position: relative;
+    color: rgb(20, 20, 20);
+    font-weight: bold;
+    text-size-adjust: 10px;
+  }
+  input.ng-invalid.ng-dirty,
+  input.ng-invalid.ng-touched,
+  mat-radio-button.ng-invalid.ng-dirty,
+  mat-radio-button.ng-invalid.ng-touched {
+    border-color: red;
+    right: 0;
+    width: 100%;
+    position: relative;
+    color: rgb(255, 5, 5);
+  }
+  .mat-raised-button{
+    padding: 0px;
+      width: 96px;
+      border-radius: 30px;
+      margin-right: 250px;
+      background-color: cadetblue;
+  }
+  

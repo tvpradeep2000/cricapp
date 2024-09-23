@@ -1,0 +1,122 @@
+<!-- <div class="main no-gutters">
+    <h1>U19 Registration Form</h1>
+<div class="container">
+    <form [formGroup]="cricketform" (ngSubmit)="onSubmit()">
+        <h2>Personal Details</h2>
+        <mat-form-field appearance="fill">
+        <mat-label>PlayerName<mat-/label>
+        <input matInput type="text" class="form-control" id="PlayerName" formControlName="PlayerName">
+        <mat-error *ngIf="
+        cricketform.controls['PlayerName'].invalid &&
+        (cricketform.controls['PlayerName'].dirty || cricketform.controls['PlayerName'].touched)
+    " class="form-group-error-message">
+    <strong>Enter above 7 Alphabet letters</strong>
+        </mat-error>
+        </mat-form-field>
+        <label for="age">Age<strong style="color: red;">*</strong></label>
+        <input type="number" class="form-control" id="age" formControlName="age">
+        <div *ngIf="
+        cricketform.controls['age'].invalid &&
+        (cricketform.controls['age'].dirty || cricketform.controls['age'].touched)
+    " class="form-group-error-message">
+    <strong>should be greater than 15 less than 19</strong>
+        </div>
+        <label for="phonenumber">Contact Number<strong style="color: red;">*</strong></label>
+        <input type="tel" class="form-control" id="phonenumber" formControlName="phonenumber">
+        <div *ngIf="
+        cricketform.controls['phonenumber'].invalid &&
+        (cricketform.controls['phonenumber'].dirty || cricketform.controls['phonenumber'].touched)
+    " class="form-group-error-message">
+    <strong>Contact number</strong>
+        </div>
+        <label for="dateOfBirth">Date of Birth<strong style="color: red;">*</strong></label>
+        <input type="date" class="form-control" id="dateOfBirth" formControlName="dateOfBirth">
+        <div *ngIf="
+        cricketform.controls['dateOfBirth'].invalid &&
+        (cricketform.controls['dateOfBirth'].dirty || cricketform.controls['dateOfBirth'].touched)
+    " class="form-group-error-message">
+    <strong *ngIf="cricketform.controls['dateOfBirth'].errors?.['required']">DOB is required</strong>
+    <strong *ngIf="cricketform.controls['dateOfBirth'].errors?.['ageRange']">Age must be between 15 and 19 years</strong>
+        </div>
+        <label for="">Gender<strong style="color: red;">*</strong></label>
+        <div class="gender-container">
+            <label for="female" class="radio-label">
+              <input type="radio" id="female" value="F" name="gender" formControlName="gender">
+              <b>Female</b>
+            </label>
+        
+            <label for="male" class="radio-label">
+              <input type="radio" id="male" value="M" name="gender" formControlName="gender">
+              <b>Male</b>
+            </label>
+          </div>
+        <button type="submit" mat-raised-button color="accent" [disabled]="cricketform.invalid">Next</button>
+    </form>
+</div>
+</div> -->
+
+<div class="main no-gutters">
+    <h1>U19 Registration Form</h1>
+    <div class="container">
+        <div style=" margin: 24px; margin-top: 0px;">
+          <button mat-raised-button   (click)="backtoSelection()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+            Back</button>
+        </div>
+        <h2>Personal Details</h2>
+  
+      <form [formGroup]="cricketform" (ngSubmit)="onSubmit()">
+        
+        <mat-form-field appearance="fill">
+          <mat-label for="PlayerName" style="color: rgb(14, 13, 13);">Player Name</mat-label>
+          <input matInput type="text" id="PlayerName" formControlName="PlayerName">
+          <mat-error *ngIf="cricketform.controls['PlayerName'].invalid && 
+          (cricketform.controls['PlayerName'].dirty || cricketform.controls['PlayerName'].touched)" class="form-group-error-message">
+            Enter above 7 Alphabet letters
+          </mat-error>
+        </mat-form-field>
+
+  
+        <mat-form-field appearance="fill">
+          <mat-label style="color: rgb(8, 8, 8);">Age</mat-label>
+          <input matInput type="number" id="age" formControlName="age"  min="15" max="19">
+          <mat-error *ngIf="cricketform.controls['age'].invalid && 
+          (cricketform.controls['age'].dirty || cricketform.controls['age'].touched)" class="form-group-error-message">
+            Should be greater than 15 and less than 19
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label style="color: rgb(15, 15, 15);">Contact Number</mat-label>
+          <input matInput type="tel" id="phonenumber" formControlName="phonenumber">
+          <mat-error *ngIf="cricketform.controls['phonenumber'].invalid && 
+          (cricketform.controls['phonenumber'].dirty || cricketform.controls['phonenumber'].touched)" class="form-group-error-message">
+           Enter Valid Contact number
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label style="color: rgb(17, 17, 17);">Date of Birth</mat-label>
+          <!-- <input matInput type="date" id="dateOfBirth" formControlName="dateOfBirth"> -->
+          <input matInput [matDatepicker]="picker" id="dateOfBirth" formControlName="dateOfBirth">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="cricketform.controls['dateOfBirth'].invalid && 
+          (cricketform.controls['dateOfBirth'].dirty || cricketform.controls['dateOfBirth'].touched)" class="form-group-error-message">
+            <span *ngIf="cricketform.controls['dateOfBirth'].errors?.['required']">DOB is required</span>
+            <span *ngIf="cricketform.controls['dateOfBirth'].errors?.['ageRange']">Age must be between 15 and 19 years</span>
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-label for="" style="color: rgb(14, 13, 13);">Gender<strong style="color: rgb(15, 15, 15);">*</strong></mat-label>
+        <div class="gender-container">
+          <mat-radio-group formControlName="gender">
+            <mat-radio-button value="F">Female</mat-radio-button>
+            <mat-radio-button value="M">Male</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <button mat-flat-button color="primary" [disabled]="cricketform.invalid">Next</button>
+      </form>
+    </div>
+</div>
+  
+  

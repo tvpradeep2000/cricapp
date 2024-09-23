@@ -1,0 +1,140 @@
+<!-- <mat-card>
+  <h2 class="title">Personal Details</h2>
+  <table mat-table [dataSource]="[stylerole]" class="mat-elevation-z8">
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> Firstname </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.FirstName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="secondName">
+      <th mat-header-cell *matHeaderCellDef> Secondname </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.SecondName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="contactNumber">
+      <th mat-header-cell *matHeaderCellDef> ContactNumber </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.phonenumber}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dob">
+      <th mat-header-cell *matHeaderCellDef> DOB </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.dateOfBirth}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef> Gender </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.gender}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>
+
+<mat-card>
+  <h2 class="title">Address Details</h2>
+  <table mat-table [dataSource]="[stylerole]" class="mat-elevation-z8">
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="address1">
+      <th mat-header-cell *matHeaderCellDef> Address-1 </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.Address-1}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="address2">
+      <th mat-header-cell *matHeaderCellDef> Address-2 </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.Address-2}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef> City </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.city}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="state">
+      <th mat-header-cell *matHeaderCellDef> State </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.state}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pincode">
+      <th mat-header-cell *matHeaderCellDef> Pincode </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.pincode}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="addressColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: addressColumns;"></tr>
+  </table>
+</mat-card>
+
+<mat-card>
+  <h2 class="title">Cricket Details</h2>
+  <table mat-table [dataSource]="[stylerole]" class="mat-elevation-z8">
+    <ng-container matColumnDef="playerrole">
+      <th mat-header-cell *matHeaderCellDef> Role </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.playerrole}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="battingStyle">
+      <th mat-header-cell *matHeaderCellDef> Batting Style </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.battingStyle}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="battingposition">
+      <th mat-header-cell *matHeaderCellDef> Batting Position </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.battingposition}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="bowlingStyle">
+      <th mat-header-cell *matHeaderCellDef> Bowling Style </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.bowlingStyle}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="statePlayedFor">
+      <th mat-header-cell *matHeaderCellDef> State Played For </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.statePlayedFor}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="cricketColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: cricketColumns;"></tr>
+  </table>
+</mat-card>
+
+<mat-card>
+  <h2 class="title">Document Details</h2>
+  <table mat-table [dataSource]="[stylerole]" class="mat-elevation-z8">
+    <ng-container matColumnDef="photo">
+      <th mat-header-cell *matHeaderCellDef> Photo </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.photo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="identityProof">
+      <th mat-header-cell *matHeaderCellDef> Identity Proof </th>
+      <td mat-cell *matCellDef="let element"> {{stylerole.identityProof}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="documentColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: documentColumns;"></tr>
+  </table>
+</mat-card> -->
+
+<div class="live-scores-tab">
+  <h2>Recent-Results</h2>
+    <div *ngIf="recentResults?.length > 0; else noResult">
+      <div *ngFor="let score of recentResults" class="score-item">
+        <p><strong>{{ score.name }}</strong></p>
+        <p>Date: {{ score.date }}</p>
+        <p>Type: {{ score.matchType }}</p>
+        <p>Status: {{ score.matchStarted ? 'Completed' : score.matchEnded ? 'Ended' : 'Not Started' }}</p>
+        <p>Time: {{ score.dateTimeGMT | date: 'short' }}</p>
+        <p *ngIf="score.matchStarted ">{{score?.score[0]?.inning}}: {{ score?.score[0]?.r }} / {{ score?.score[0]?.w }} in {{ score?.score[0]?.o }} overs</p>
+        <p *ngIf="score.matchStarted ">{{score?.score[1]?.inning}}: {{ score?.score[1]?.r }} / {{ score?.score[1]?.w }} in {{ score?.score[1]?.o }} overs</p>
+        <p>Status: {{ score.status}}</p>
+      </div>
+    </div>
+  <ng-template #noResult>
+    <p>No Results available at the moment.</p>
+  </ng-template>
+</div>

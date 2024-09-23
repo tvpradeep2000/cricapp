@@ -1,0 +1,174 @@
+/* 
+.center {
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+  }
+  
+ 
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+    background-color: #f9f9f9;
+  }
+  
+
+  th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+    
+    th {
+      text-align: right;
+    }
+  
+    td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+    }
+    
+    td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      width: 45%;
+      padding-right: 10px;
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+   */
+
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Card styling */
+  mat-card {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #f30909;
+    margin-bottom: 20px;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .mat-elevation-z8 {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .mat-header-cell {
+    background-color: #2c2929;
+    color: rgb(252, 249, 249);
+    font-weight: bold;
+    text-align: left;
+    padding: 12px 15px;
+  }
+  
+  .mat-cell {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .mat-row:hover {
+    background-color: #f1f1f1; /* Light grey for row hover */
+  }
+  
+  /* Specific styling for player data */
+  table th[data-label="PlayerName"] {
+    width: 25%;
+  }
+  
+  table th[data-label="Age"],
+  table th[data-label="DOB"] {
+    width: 15%;
+  }
+  
+  table th[data-label="ContactNumber"],
+  table th[data-label="Gender"] {
+    width: 20%;
+  }
+  
+  table th[data-label="Email"],
+  table th[data-label="Pincode"] {
+    width: 30%;
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 768px) {
+    .mat-title {
+        font-size: 20px;
+    }
+  
+    mat-card {
+        padding: 15px;
+    }
+  
+    .mat-header-cell, .mat-cell {
+        padding: 8px 10px;
+    }
+  }
+  
+  /* Button styles (optional) */
+  .mat-button {
+    background-color: #6cebd5; /* Dark green */
+    color: white;
+    margin-top: 10px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .mat-button:hover {
+    background-color: #00695c; /* Slightly lighter green on hover */
+  }
+  
+  .mat-elevation-z8 {
+    border-radius: 10px;
+    overflow: hidden;
+  }

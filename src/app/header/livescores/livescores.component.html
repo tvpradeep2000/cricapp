@@ -1,0 +1,25 @@
+
+<div class="live-scores-tab">
+  <h2>Live Cricket Scores</h2>
+  <div *ngIf="(liveScores ?? []) | filterInProgress as inProgressScores; else noScores">
+    <div *ngIf="inProgressScores.length > 0; else noScores">
+      <div *ngFor="let score of inProgressScores" class="score-item">
+        <p><strong>{{ score.name }}</strong></p>
+        <p>Date: {{ score.date }}</p>
+        <p>Type: {{ score.matchType }}</p>
+        <p>Status: {{ score.matchStarted ? 'In Progress' : score.matchEnded ? 'Ended' : 'Not Started' }}</p>
+        <p>Time: {{ score.dateTimeGMT | date: 'short' }}</p>
+        <p *ngIf="score.matchStarted ">{{score?.score[0]?.inning}}: {{ score?.score[0]?.r }} / {{ score?.score[0]?.w }} in {{ score?.score[0]?.o }} overs</p>
+        <p *ngIf="score.matchStarted ">{{score?.score[1]?.inning}}: {{ score?.score[1]?.r }} / {{ score?.score[1]?.w }} in {{ score?.score[1]?.o }} overs</p>
+        <p>Status: {{ score.status}}</p>
+      </div>
+    </div>
+  </div>
+  <ng-template #noScores>
+    <p>No live scores available at the moment.</p>
+  </ng-template>
+</div>
+
+
+
+  

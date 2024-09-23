@@ -1,0 +1,48 @@
+{
+  "PlayerData": [
+    {
+      "Playername": "Pradeep",
+      "Age": 19,
+      "ContactNumber": 6303966947,
+      "DOB": "5-8-2004",
+      "Gender": "Male",
+      "id": "ada8"
+    },
+    {
+      "Playername": "Sathwik",
+      "Age": 19,
+      "ContactNumber": 9003503889,
+      "DOB": "1-8-2004",
+      "Gender": "Male",
+      "id": "2386"
+    },
+    {
+      "Playername": "Pradeep",
+      "Age": 19,
+      "ContactNumber": 6303966947,
+      "DOB": "5-8-2004",
+      "Gender": "Male",
+      "id": "2e21"
+    },
+    {
+      "Playername": "Sathwik",
+      "Age": 19,
+      "ContactNumber": 9003503889,
+      "DOB": "1-8-2004",
+      "Gender": "Male",
+      "id": "44f6"
+    },
+    {
+      "id": "b1f7",
+      "Playername": "pradeep",
+      "Age": 16,
+      "ContactNumber": "6543322321",
+      "DOB": "2024-07-10"
+    }
+  ],
+  "Addressdetails":[
+    {
+      "address1":"ijuhygtfdcvbnm,"
+    }
+  ]
+}
