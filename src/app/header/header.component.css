@@ -53,13 +53,15 @@ ul li a{
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  background-image: url('/assets/Image.jpg') !important;
+  /* background-image: url('/assets/Image.jpg') !important; */
+  background-image: url('https://www.shutterstock.com/image-photo/cricket-leather-ball-resting-on-260nw-1773488369.jpg') !important;
+  
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 a{
-    line-height: 40px;
+    line-height: 40px; 
     color:rgb(238, 13, 13);
     font-style: italic;
     margin: 0 20px;
