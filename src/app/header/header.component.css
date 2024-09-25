@@ -62,11 +62,11 @@ ul li a{
 }
 a{
     line-height: 40px; 
-    color:rgb(238, 13, 13);
-    font-style: italic;
+    color:rgb(5, 5, 5);
+    /* font-style: italic; */
     margin: 0 20px;
 }
 a:hover{
-    color: rgb(0, 0, 0);
+    color: rgb(245, 240, 240);
     font-size: large;
 }
