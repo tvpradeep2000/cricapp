@@ -29,5 +29,23 @@ export class UpcomingComponent implements OnInit {
       }
     });
   }
+
+  currentSlide = 0;
+  totalSlides = 3;  // Adjust this based on the number of images
+
+  prevSlide() {
+    this.currentSlide = (this.currentSlide === 0) ? this.totalSlides - 1 : this.currentSlide - 1;
+    this.updateCarousel();
+  }
+
+  nextSlide() {
+    this.currentSlide = (this.currentSlide === this.totalSlides - 1) ? 0 : this.currentSlide + 1;
+    this.updateCarousel();
+  }
+
+  updateCarousel() {
+    const carousel = document.querySelector('.carousel');
+    // carousel.style.transform = `translateX(-${this.currentSlide * 100}%)`;
+  }
   }
 

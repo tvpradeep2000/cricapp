@@ -8,18 +8,17 @@ import { PlayersdataService } from 'src/app/services/playersdata.service';
   styleUrls: ['./playersdata.component.css']
 })
 export class PlayersdataComponent implements OnInit {
-  // @Input() 
-  // @Output() userDataEvent=new EventEmitter();
   userData1:any;
   stylerole: any; 
-  // response: any;
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route:ActivatedRoute, private palyerservice:PlayersdataService) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params =>{
       this.stylerole = params;
       console.log(this.stylerole)
   }) 
+ 
+
 }
 // Getdata1(){
 //   this.ts.Getdata().subscribe((res:any)=>{
