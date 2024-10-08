@@ -1,34 +1,8 @@
-<!-- <div class="reg">
-    <div class="container">
-        <form [formGroup]="formdata" Ngsubmit="onSubmit()">
-            <label for="name">Name:</label>
-            <input type="text" id="name" class="form-control" formControlName="name">
-            <div *ngIf="formdata.controls['name'].invalid && 
-            (fromdata.controls['name'].dirty || formdata.controls['name'].touched) class='form-group-error-message' ">
-        <strong style="color: red;">Please enter albhabets only</strong>
-        </div>
-        <label for="number">Phone Number:</label>
-        <input type="tel" id="number" class="form-control" formControlName="number">
-        <div *ngIf="formdata.controls['number'].invalid || 
-        (formdata.controls['number'].dirty && formdata.controls['number'].touched) class='form-group-error-messag' ">
-    <strong style="color: red;">Please enter valid details</strong>
-    </div>
-    <label for="age">Enter Age:</label>
-    <input type="number" id="Age" class="form-control" formControlName="Age">
-    <div *ngIf="formdata.controls['Age'].invalid || (formdata.controls['Age'].dirty && formdata.controls['Age'].touched) class='form-group-error-message' ">
-        <strong style="color: red;">Please enter correct age</strong>
-    </div>   
-    <button type="submit"  [disabled]="formdata.invalid" class="btn btn-primary">Submit</button>     
-</form>
-    </div>
-</div> -->
-
 
 <div class="live-scores-tab">
     <!-- <h2>Live Cricket Scores</h2> -->
     <div *ngIf="homedata?.length > 0; else noScores">
       <div *ngFor="let score of homedata" class="score-item">
-        <!-- {{score | json}} -->
         <p><strong>{{ score.name }}</strong></p>
         <p>Date: {{ score.date }}</p>
         <p>Type: {{ score.matchType }}</p>
@@ -36,13 +10,10 @@
         <p>Time: {{ score.dateTimeGMT | date: 'short' }}</p>
         <p *ngIf="score.matchStarted ">{{score?.score[0]?.inning}}: {{ score?.score[0]?.r }} / {{ score?.score[0]?.w }} in {{ score?.score[0]?.o }} overs</p>
         <p *ngIf="score.matchStarted ">{{score?.score[1]?.inning}}: {{ score?.score[1]?.r }} / {{ score?.score[1]?.w }} in {{ score?.score[1]?.o }} overs</p>
-        <!-- <p *ngIf="score.matchStarted">Namibia Women Score: {{ score.score[0].r }} / {{ score.score[0].w }} in {{ score.score[0].o }} overs</p>
-        <p *ngIf="score.matchStarted">UAE Women Score: {{ score.score[1].r }} / {{ score.score[1].w }} in {{ score.score[1].o }} overs</p> -->
         <p>Status: {{ score.status }}</p>
       </div>
     </div>
     <ng-template #noScores>
       <p>No Matches available at the this moment.</p>
     </ng-template>
-    <!-- <pre>{{ homedata | json }}</pre> -->
   </div>
