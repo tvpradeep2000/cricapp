@@ -62,8 +62,6 @@ export class U19formComponent implements OnInit {
         skipLocationChange: true});
         console.log(this.cricketform.value);
     }
-    
-
   }
 
   get PlayerName(){
