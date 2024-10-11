@@ -79,7 +79,8 @@
           <mat-label>Address-1</mat-label>
           <input matInput type="text" formControlName="address" required>
           <mat-error *ngIf="addressform.controls['address'].invalid && 
-          (addressform.controls['address'].dirty || addressform.controls['address'].touched)"class="form-group-error-message">
+          (addressform.controls['address'].dirty || addressform.controls['address'].touched)"
+          class="form-group-error-message">
             Enter valid address details
           </mat-error>
         </mat-form-field>

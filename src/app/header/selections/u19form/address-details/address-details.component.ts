@@ -28,7 +28,7 @@ export class AddressDetailsComponent implements OnInit {
       const fullData={...this.userData,...playerData}
       localStorage.setItem('addressFormData', JSON.stringify(this.addressform.value));
 
-      this.router.navigate(['/cricket-details',],{queryParams:fullData,skipLocationChange:true});
+      this.router.navigate(['/cricket-details'],{queryParams:fullData,skipLocationChange:true});
       console.log(this.addressform.value)
     }
   }
