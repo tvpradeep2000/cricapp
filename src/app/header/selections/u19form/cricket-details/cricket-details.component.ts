@@ -13,8 +13,7 @@ export class CricketDetailsComponent implements OnInit {
   bowlingStyle = ['None','Right-arm Fast', 'Left-arm Fast','Rigth-arm Medium','Left-arm Medium','Off-Spinner','Leg-Spinner','Left-Arm Orthodox (Slow Left-Arm)','Left-Arm Chinaman (Unorthodox Left-Arm Spin)'];
   battingposition=['Opening Batsman','Middle-order','Finisher','Lower-order'];
   playerrole = ['Batsman', 'Bowler', 'Batting-All-rounder', 'Bowling-All-rounder','Wicketkeeper'];
-  // @Input() 
-  // @Output() userDataEvent=new EventEmitter();
+
   playerData: any;
   ngOnInit(): void {
     const savedForm = localStorage.getItem('playerskillFormData');
@@ -22,18 +21,16 @@ export class CricketDetailsComponent implements OnInit {
       this.playerskill.setValue(JSON.parse(savedForm));
     }
     this.route.queryParams.subscribe(params =>{
-      // this.userData= params;
-      // console.log(this.userData)
       this.playerData = params;
       console.log(this.playerData)
-  });
+    });
+
 //   this.route.queryParams.subscribe(params =>{
 //     this.userData= params;
 //     console.log(this.userData)
 // });
   }
   constructor(private router:Router, private route:ActivatedRoute,private http:HttpClient) { }
-  // stylerole:any
   userData:any
   playerskill=new FormGroup({
     battingStyle:new FormControl('',[Validators.required]),

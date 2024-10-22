@@ -70,7 +70,6 @@
             Position is required
           </mat-error>
         </mat-form-field>
-
         <mat-form-field appearance="fill">
           <mat-label>Batting Style</mat-label>
           <mat-select formControlName="battingStyle" required>
@@ -79,6 +78,7 @@
           <mat-error *ngIf="playerskill.controls['battingStyle'].invalid && (playerskill.controls['battingStyle'].dirty || playerskill.controls['battingStyle'].touched)" class="form-group-error-message">
             Batting Style is required
           </mat-error>
+         
         </mat-form-field>
   
         <mat-form-field appearance="fill">

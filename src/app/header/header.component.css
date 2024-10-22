@@ -39,12 +39,6 @@ ul li a{
     text-decoration: none;
 }
 
-/* .navbar navbar-expand-lg{
-    background-image: url('/assets/Image.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-} */
 .navbar {
   position: relative;
   display: flex;
@@ -54,7 +48,6 @@ ul li a{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   background-color: rgb(241, 244, 253);
-  /* background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230630/pngtree-d-illustration-of-a-cricket-pitch-with-a-view-of-the-image_3701619.jpg') !important; */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
